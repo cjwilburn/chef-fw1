@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: fw1
-# Recipe:: defaukt
+# Recipe:: default
 #
 # Copyright 2012, Courtney Wilburn
 #
@@ -18,7 +18,7 @@
 #
 
 # Checkout Framework One Repo
-git "#{node['cf10']['frameworks']}/caoscorelib" do                            
+git "#{node['cf10']['frameworks']}/fw1" do                            
   repository "#{node['fw1']['git']['repository']}"
   revision "#{node['fw1']['git']['revision']}"                                  
   action :sync                                     
