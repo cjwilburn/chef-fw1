@@ -16,6 +16,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Create Directory if missing
+
+directory "#{node['fw1']['install_path']}" do
+ owner "vagrant"
+ group "vagrant"
+ mode "0755"
+ action :create
+ not_if { File.directory?("#{node['fw1']['install_path']}") }
+end
 
 # Checkout Framework One Repo
 git "#{node['cf10']['frameworks']}/fw1" do                            
